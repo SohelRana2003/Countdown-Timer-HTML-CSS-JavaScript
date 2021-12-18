@@ -1,0 +1,196 @@
+/* Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap");
+
+/* 
+    ==================== Font Family ====================
+    font-family: 'Lato', sans-serif;
+    font-family: 'Oswald', sans-serif;
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Lato", sans-serif;
+}
+
+/* Main Section */
+section#banner {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-image: url("../img/55366.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+
+/* Countdown Timer */
+#srTimer {
+  position: absolute;
+  right: 15px;
+  bottom: 15px;
+  transform: translate(-15px, -15px);
+  width: 100px;
+  height: 100px;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    90deg,
+    rgba(23, 23, 23) 0%,
+    180deg,
+    rgb(22, 23, 24) 100%
+  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(255, 255, 255, 0.3);
+  transition: all 0.8s;
+  opacity: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+#srTimer.active {
+  opacity: 1;
+  pointer-events: all;
+  bottom: 50%;
+  right: 50%;
+  transform: translate(50%, 50%);
+  width: 700px;
+  height: 400px;
+  border-radius: 15px;
+}
+
+#srTimer .srTimerHead {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+#srTimer .srTimerHead span {
+  margin-right: 10px;
+  width: 15px;
+  height: 15px;
+  text-align: center;
+  border-radius: 50%;
+  font-size: 10px;
+  line-height: 15px;
+  cursor: pointer;
+  color: transparent;
+  transition: 0.3;
+  padding: 2px 0;
+}
+#srTimer .srTimerHead span:last-child {
+  background: #fd5858;
+}
+#srTimer .srTimerHead span:hover:last-child {
+  color: #7e0009;
+}
+#srTimer .srTimerHead span .icons {
+  width: 15px;
+  height: 15px;
+  font-size: 10px;
+}
+
+/* Timer Toggle Icon */
+.srtimerIcon {
+  position: absolute;
+  right: 15px;
+  bottom: 15px;
+  width: 35px;
+  height: 35px;
+  background-color: #ddd;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.3;
+}
+
+/* Cuntdown Timer Section */
+.headding h2 {
+  font-size: 32px;
+  font-weight: 400;
+  font-family: "Oswald", sans-serif;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+.srCuntdown {
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.srCuntdown .srDaysLeft {
+  transform: rotate(-8deg);
+  margin: 30px 0 60px 0;
+}
+.srCuntdown .srDaysLeft span {
+  padding: 0;
+  margin: 0;
+}
+.srCuntdown .srDaysLeft span:nth-child(1) {
+  background-color: rgb(100, 98, 98);
+  padding: 5px;
+}
+.srCuntdown .srDaysLeft span:nth-child(2) {
+  background: linear-gradient(
+    335.64deg,
+    #ff589b -19.22%,
+    #ff136f 118.87%
+  ) !important;
+  padding: 18px;
+  font-size: 32px;
+  font-weight: bold;
+}
+.srCuntdown .srDaysLeft span:nth-child(3) {
+  background-color: rgb(85, 84, 84);
+  padding: 5px;
+}
+
+/* Display Counter Time */
+.timeLeft {
+  margin: 30px 0;
+}
+.timeLeft .timeBlock {
+  position: relative;
+  padding: 10px 20px;
+  margin: 0 5px;
+  font-family: "Oswald", sans-serif;
+  font-size: 32px;
+  background: linear-gradient(107.07deg, #141414 -6.64%, #181818 89.11%);
+  box-shadow: 0 2px 6px rgba(99, 93, 93, 0.651);
+  border-radius: 5px;
+}
+
+.timeLeft .timeBlock::before {
+  position: absolute;
+  top: -28px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 16px;
+  text-align: center;
+  font-family: "Lato", sans-serif;
+}
+.timeLeft .timeBlock.hours::before {
+  content: "Hours";
+}
+.timeLeft .timeBlock.minutes::before {
+  content: "Minutes";
+}
+.timeLeft .timeBlock.seconds::before {
+  content: "Seconds";
+}
